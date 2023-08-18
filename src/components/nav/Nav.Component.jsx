@@ -5,11 +5,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeUserFromLocalStorage } from '../../services/auth.service';
 import { removeUser } from '../../redux/user.slicer';
 import NavBarSearchComponent from './components/NavBarSearch.Component';
+//import { useContext } from 'react';
+//import { ContextRootState } from '../../context/RootStore.Context';
 
 const NavComponent = () => {
   // data from redux store
   const userStore = useSelector((state) => state.userStore.user);
   const dispatch = useDispatch();
+
+  //const context = useContext(ContextRootState);
 
   useEffect(() => {
     //console.log(userStore);

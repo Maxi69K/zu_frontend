@@ -12,6 +12,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query';
+import {RootStoreContext} from './context/RootStore.Context'; // use Context or Redux
 
 const router = createBrowserRouter(routes);
 
@@ -23,7 +24,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <QueryClientProvider client={queryClient}>
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <RootStoreContext>
+        <RouterProvider router={router} />
+      </RootStoreContext>
     </Provider>
   </QueryClientProvider>
 );
